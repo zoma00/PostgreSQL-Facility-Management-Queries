@@ -3,16 +3,17 @@
 
 
 1. How can you retrieve all the information from the cd.facilities table?
+*/
 SELECT * FROM cd.facilities; 
-
+/*
 2.You want to print out a list of all of the facilities and their cost to members. How would you retrieve a list of only facility names and costs?
+*/
 SELECT name, membercost FROM cd.facilities;
-
+/*
 3.How can you produce a list of facilities that charge a fee to members?
- SELECT * FROM cd.facilities WHERE membercost > 0;
  */
 
-
+ SELECT * FROM cd.facilities WHERE membercost > 0;
 
 /*
  How can you produce a list of facilities that:
@@ -49,7 +50,6 @@ And (membercost< monthlymaintenance/50)
 SELECT * FROM cd.facilities
 WHERE name LIKE '%Tennis%'
 
-
 /*
 How can you retrieve the details of facilities with ID 1 and 5? 
 Try to do it without using the OR operator.
@@ -70,7 +70,6 @@ or facid = 5;
 SELECT memid,surname,firstname,joindate 
 FROM cd.members
 WHERE joindate >= '2012-09-01'
-
 
 /*
 8.How can you produce an ordered list of the first 10 surnames 
@@ -94,8 +93,6 @@ SELECT joindate FROM cd.members
 ORDER BY joindate DESC
 LIMIT 1;
 
-
-
 /*
 10.Produce a count of the number of facilities that have 
 a cost to guests of 10 or more.
@@ -103,8 +100,6 @@ a cost to guests of 10 or more.
 
 SELECT COUNT(guestcost) FROM cd.facilities
 WHERE guestcost >= 10
-
-
 
 /*
 11. Produce a list of the 
@@ -127,8 +122,6 @@ FROM cd.bookings
 WHERE starttime > '2012-09-01' AND starttime <= '2012-10-01'
 GROUP BY facid ORDER BY SUM(slots)
 
-
-
 /*
 13. How can you produce a list of the start times for bookings for 
 tennis courts,
@@ -136,8 +129,6 @@ for the date '2012-09-21'? Return a list of start time and facility name
 pairings,
 ordered by the time.
 */
-
-
  SELECT cd.bookings.starttime AS start, cd.facilities.name AS name
  FROM cd.facilities
  INNER JOIN cd.bookings
@@ -147,14 +138,11 @@ ordered by the time.
  AND cd.bookings.starttime < '2012-09-22'
  ORDER BY cd.bookings.starttime
 
-
  /*
- 
 How can you produce a list of the start times for bookings by members 
 named 'David Farrell'?
 
  */
-
 SELECT * FROM cd.bookings;
 select * from cd.members;
 
