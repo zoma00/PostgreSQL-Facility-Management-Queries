@@ -175,7 +175,7 @@ AND cd.members.surname = 'Farrell';
 ## How to Use
 
 1. Clone this repository to your local machine.
-2. Open the `sql_test.sql` file in your PostgreSQL environment.
+2. Open the `assessmenttest2.sql` file in your PostgreSQL environment.
 3. Execute the queries against your database to see the results.
 
 ---
